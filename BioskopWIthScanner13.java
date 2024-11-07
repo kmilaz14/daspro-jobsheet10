@@ -29,7 +29,14 @@ public interface BioskopWIthScanner13 {
                     sc.nextLine();
 
                     if(baris>= 1 && baris <=4 && kolom>=1 && kolom <=2){
-                        penonton[baris-1][kolom-1] = nama;
+                        if (penonton[baris-1][kolom-1] == null) {
+                            System.out.println("Baris dan kolom tersedia.");
+                            penonton[baris-1][kolom-1] = nama;
+                        } else {
+                            System.out.println("Kursi sudah terisi. Silahkan pilih kursi lain!");
+                        }
+                    } else {
+                        System.out.println("Nomor baris/kolom tidak tersedia.");
                     }
                     break;
                 case 2:
